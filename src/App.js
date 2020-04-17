@@ -1,26 +1,69 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
 
-function App() {
+
+const useStyles = makeStyles((theme) => ({
+  margin: {
+    margin: theme.spacing(1),
+  },
+  extendedIcon: {
+    marginRight: theme.spacing(1),
+  },
+}));
+
+export default function App() {
+  const classes = useStyles();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div>
+        <Button size="small" className={classes.margin}>
+          Small
+        </Button>
+        <Button size="medium" className={classes.margin}>
+          Medium
+        </Button>
+        <Button size="large" className={classes.margin}>
+          Large
+        </Button>
+      </div>
+      <div>
+        <Button variant="outlined" size="small" color="primary" className={classes.margin}>
+          Small
+        </Button>
+        <Button variant="outlined" size="medium" color="primary" className={classes.margin}>
+          Medium
+        </Button>
+        <Button variant="outlined" size="large" color="primary" className={classes.margin}>
+          Large
+        </Button>
+      </div>
+      <div>
+        <Button variant="contained" size="small" color="primary" className={classes.margin}>
+          Small
+        </Button>
+        <Button variant="contained" size="medium" color="primary" className={classes.margin}>
+          Medium
+        </Button>
+        <Button variant="contained" size="large" color="primary" className={classes.margin}>
+          Large
+        </Button>
+      </div>
+      <div>
+
+        <IconButton aria-label="delete" className={classes.margin}>
+          <DeleteIcon fontSize="small" />
+        </IconButton>
+        <IconButton aria-label="delete" className={classes.margin}>
+          <DeleteIcon />
+        </IconButton>
+        <IconButton aria-label="delete" className={classes.margin}>
+          <DeleteIcon fontSize="large" />
+        </IconButton>
+      </div>
     </div>
   );
 }
-
-export default App;
